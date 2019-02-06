@@ -10,7 +10,8 @@ stringsAnswers = {
    * @returns {String} A string with no more than amount number of repeated letters.
    */
   reduceString: function reduceString(str, amount) {
-
+    var re = new RegExp("(.)(?=\\1{" + amount + "})","g");
+    return str.replace(re, "");
   },
 
   /**
@@ -22,6 +23,9 @@ stringsAnswers = {
    * @returns {String} The original string of text str reversed.
    */
   reverseString: function reverseString(str) {
-
+    return str
+    .split('')
+    .reverse()
+    .join('')
   },
 };

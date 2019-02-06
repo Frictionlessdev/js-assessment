@@ -12,6 +12,30 @@ flowControlAnswers = {
    * @returns {String} The string 'fizz', 'buzz', or 'fizzbuzz'
    */
   fizzBuzz: function fizzBuzz(num) {
+    if(!num){
+      return false;
+    }
+    let result = undefined;
+    switch(typeof(num)){
+      case 'number':
+        if(num == 15 || (num % 15) == 0){
+          result = 'fizzbuzz';
+        }
+        else if(num == 3 || num == 6 || (num % 3) == 0){
+          result = 'fizz';
+        }
+        else if(num == 5 || num == 10 || (num % 5) == 0){
+          result = 'buzz';
+        } 
+        else result = num;
+        break;
+      case 'string':
+        result = !(num == 'foo')
+        break;
+      default:
+        console.log(num);
+    }
 
+    return result ;
   },
 };
